@@ -1,0 +1,15 @@
+.titulo {
+    background-color: #420000;
+    color: #ffffff;
+    text-align: center;
+    font-size: 30px;
+    width: 90%;
+}
+
+.crear {
+    background-color: white;
+    color: black;
+    border: 2px solid #04AA6D;
+    padding: 15px 32px;
+    text-align: center;
+}
