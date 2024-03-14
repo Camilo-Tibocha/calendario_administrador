@@ -1,0 +1,18 @@
+.encabezado{
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 35px;
+    text-align: center;
+    width: 98%;
+    height: 57px;
+}
+
+.botones{
+    background-color: #45cccc;
+    text-align: center;
+    font-size: 25px;
+    border: 2px solid #0000;
+    margin-top: 5px;
+    width: 300px;
+    height: 440px;
+}
