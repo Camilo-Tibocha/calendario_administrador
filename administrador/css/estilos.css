@@ -1,7 +1,7 @@
 .container {
     display: flex;
     align-items: center;
-    justify-content: center; /* Agregamos justify-content para centrar horizontalmente */
+    justify-content: center; 
     margin-top: 20px;
     text-align: center;
 }
@@ -43,4 +43,17 @@
     font-size: 30px;
     width: 100%; 
     padding: 10px 0; 
+}
+
+.tablaEmpleados{
+    background-color: #720000;
+    color: #ffffff;
+    width: 100%;
+    border: 1px solid;
+    padding: 5px;
+    text-align: left;
+    
+}
+#formulario {
+    margin-top: 20px;
 }
