@@ -1,5 +1,5 @@
 document.getElementById("enero").addEventListener('click', ()=>{
-    
+    (new Date(2024,10,0)).getDate()
 });
 
 document.getElementById("febrero").addEventListener('click', ()=>{
