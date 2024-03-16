@@ -6,19 +6,33 @@
     <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
-    <header class="encabezado">Calendario de eventos</header>
-    <button class="botones" id="enero">Enero</button>
-    <button class="botones" id="febrero">Febrero</button>
-    <button class="botones" id="marzo">Marzo</button>
-    <button class="botones" id="abril">Abril</button>
-    <button class="botones" id="mayo">Mayo</button>
-    <button class="botones" id="junio">Junio</button>
-    <button class="botones" id="julio">Julio</button>
-    <button class="botones" id="agosto">Agosto</button>
-    <button class="botones" id="septiembre">Septiembre</button>
-    <button class="botones" id="octubre">Octubre</button>
-    <button class="botones" id="noviembre">Noviembre</button>
-    <button class="botones" id="diciembre">Diciembre</button>
+    <header class="encabezado">Calendario</header>
+   <form class="formulario">
+    <label>Elija el mes:</label>
+    <select name="meses" id="mes">
+        <option value="0">Enero</option>
+        <option value="1">Febrero</option>
+        <option value="2">Marzo</option>
+        <option value="3">Abril</option>
+        <option value="4">Mayo</option>
+        <option value="5">Junio</option>
+        <option value="6">Julio</option>
+        <option value="7">Agosto</option>
+        <option value="8">Septiembre</option>
+        <option value="9">Octubre</option>
+        <option value="10">Noviembre</option>
+        <option value="11">Diciembre</option>
+    </select>
+   </form>
+   <form class="formulario">
+    <label>Seleccione el dia:</label>
+    <input type="number">
+   </form>
+   <form class="formulario">
+    <label>Ingrese el evento:</label>
+    <input type="text">
+   </form>
+   <button>Registrar evento</button>
     <script src="js/javaScript.js"></script>
 </body>
 </html>
