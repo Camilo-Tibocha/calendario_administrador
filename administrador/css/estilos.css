@@ -1,35 +1,46 @@
-.container{
-display: flex;
-align-items: center;
-align-items: center;
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Agregamos justify-content para centrar horizontalmente */
+    margin-top: 20px;
+    text-align: center;
 }
 
-.text{
+
+.text {
     margin-bottom: 10px;
     padding: 10px;
-    border: 1-x solid #ccc;
+    border: 1px solid #ccc; 
     width: 300px;
     outline: none;
-
 }
-.createButtom{
-    background-color: white;
-    padding: 15px 32px;
-    color: black;
-    border: 2px solid #04AA6D;
+
+
+.buscarButton, .createButton {
+    padding: 10px 20px;
+    margin: 5px 10px; 
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
-    text-align: center;
-    transition: backgrouund-color 0.3s ease;
 }
 
 
+.buscarButton:hover {
+    background-color: #0056b3;
+}
 
+
+.createButton:hover {
+    background-color: #04AA6D;
+}
 
 .titulo {
     background-color: #420000;
     color: #ffffff;
     text-align: center;
     font-size: 30px;
-    width: 90%;
+    width: 100%; 
+    padding: 10px 0; 
 }
-

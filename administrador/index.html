@@ -4,15 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Administrador</title>
-    <link rel = "stylesheet" href = "css/estilos.css">
+    <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
 
-    <header class = "titulo" >LISTA DE EMPLEADOS</header>
+    <header class="titulo">ADMINISTRADOR DE EMPLEADOS</header>
     <div class="container">
-        <input type= "text"></input>
-        <buttom class="createButtom">Crear empleado</buttom>
+        <input type="text" id="busqueda" placeholder="Buscar empleado">
+        <button class="buscarButton" onclick="buscarEmpleado()">Buscar</button>
+        <button class="createButton" onclick="mostrarFormulario()">Crear empleado</button>
     </div>
    
+    <div id="formulario" style="display: none;">
+        <h2>Crear nuevo empleado</h2>
+        <input type="text" id="nombre" placeholder="Nombre">
+        <input type="text" id="apellido" placeholder="Apellido">
+        <input type="text" id="cargo" placeholder="Cargo">
+        <button class="guardarButton" onclick="guardarEmpleado()">Guardar</button>
+        <button class="cancelarButton" onclick="cancelarCreacion()">Cancelar</button>
+    </div>
+
+    <table id="tablaEmpleados" class="tablaEmpleados">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Cargo</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+
+    
 </body>
 </html>
