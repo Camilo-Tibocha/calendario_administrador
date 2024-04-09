@@ -9,7 +9,7 @@
     <header class="encabezado">Calendario</header>
    <form class="formulario">
     <label>Elija el mes:</label>
-    <select name="meses" id="mes">
+    <select name="meses" id="mes" class="fechas">
         <option value="0">Enero</option>
         <option value="1">Febrero</option>
         <option value="2">Marzo</option>
@@ -26,13 +26,17 @@
    </form>
    <form class="formulario">
     <label>Seleccione el dia:</label>
-    <input id="dia" type="number" min="1" max="31">
+    <input id="dia" class="fechas" type="number" min="1" max="31">
    </form>
    <form class="formulario">
     <label>Ingrese el evento:</label>
-    <input placeholder="Ingrese el contenido" type="text">
+    <input class="contenido" placeholder="Ingrese el contenido que quiere registrar" type="text">
    </form>
    <button>Registrar evento</button>
+   <button>Eliminar evento</button>
     <script src="js/javaScript.js"></script>
+   <form class="formulario">
+    <label>Eventos registrados: </label>
+   </form>
 </body>
 </html>
