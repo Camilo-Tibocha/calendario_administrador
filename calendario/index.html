@@ -22,21 +22,16 @@
         <option value="9">Octubre</option>
         <option value="10">Noviembre</option>
         <option value="11">Diciembre</option>
-    </select>
+    </select> <br>
+    <br><label>Seleccione el dia:</label>
+    <input id="dia" class="fechas" type="number" min="1" max="31" value="1"> <br>
+    <br><label>Ingrese el evento:</label>
+    <input id="evento" class="contenido" placeholder="Ingrese el contenido que quiere registrar" type="text">
+    <button id="registrar">Registrar evento</button>
+    <button id="eliminar">Eliminar evento</button>
+    <br>
+    <br><label>Eventos registrados:</label>
    </form>
-   <form class="formulario">
-    <label>Seleccione el dia:</label>
-    <input id="dia" class="fechas" type="number" min="1" max="31">
-   </form>
-   <form class="formulario">
-    <label>Ingrese el evento:</label>
-    <input class="contenido" placeholder="Ingrese el contenido que quiere registrar" type="text">
-   </form>
-   <button id="registrar">Registrar evento</button>
-   <button id="eliminar">Eliminar evento</button>
-    <script src="js/javaScript.js"></script>
-   <form class="formulario">
-    <label>Eventos registrados:</label>
-   </form>
+   <script src="js/javaScript.js"></script>
 </body>
 </html>
