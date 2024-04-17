@@ -54,6 +54,57 @@
     text-align: left;
     
 }
+
 #formulario {
-    margin-top: 20px;
-}
+    display: none;
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  #formulario h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+  
+  #formulario input[type="text"],
+  #formulario input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  #formulario .guardarButton,
+  #formulario .cancelarButton {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  #formulario .guardarButton {
+    background-color: #4caf50;
+    color: #fff;
+  }
+  
+  #formulario .guardarButton:hover {
+    background-color: #45a049;
+  }
+  
+  #formulario .cancelarButton {
+    background-color: #f44336;
+    color: #fff;
+  }
+  
+  #formulario .cancelarButton:hover {
+    background-color: #da190b;
+  }
