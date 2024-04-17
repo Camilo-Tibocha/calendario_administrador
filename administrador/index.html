@@ -16,13 +16,21 @@
      
     <div id="formulario">
         <h2>Crear nuevo empleado</h2>
-        <input type="text" id="nombreNuevo" placeholder="Nombre">
-        <input type="text" id="apellidoNuevo" placeholder="Apellido">
-        <input type="text" id="cargoNuevo" placeholder="Cargo">
-        <input type="number" id="salarioNuevo" placeholder="Salario">
-        <button class="guardarButton">Guardar</button>
-        <button class="cancelarButton">Cancelar</button>
+        <form id="formularioEmpleado">
+            <input type="text" id="nombreNuevo" placeholder="Nombre" required>
+            <div id="errorNombre" class="error"></div>
+            <input type="text" id="apellidoNuevo" placeholder="Apellido" required>
+            <div id="errorApellido" class="error"></div>
+            <input type="text" id="cargoNuevo" placeholder="Cargo" required>
+            <div id="errorCargo" class="error"></div>
+            <input type="number" id="salarioNuevo" placeholder="Salario" required>
+            <div id="errorSalario" class="error"></div>
+            <button type="submit" class="guardarButton">Guardar</button>
+            <button type="button" class="cancelarButton">Cancelar</button>
+        </form>
     </div>
+    
+    
     </div>
 
     <table id="tablaEmpleados" class="tablaEmpleados">

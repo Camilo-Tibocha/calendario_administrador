@@ -14,7 +14,9 @@
     width: 300px;
     outline: none;
 }
-
+input:required {
+    border: 1px solid red; /* Cambia el borde a rojo para resaltar los campos obligatorios */
+}
 
 .buscarButton, .createButton {
     padding: 10px 20px;
@@ -53,6 +55,12 @@
     padding: 5px;
     text-align: left;
     
+}
+.error {
+    color: red;
+    font-size: 0.8em;
+    margin-top: 0.2em;
+    display: none;
 }
 
 #formulario {
