@@ -8,11 +8,24 @@ document.getElementById('mes').addEventListener('change',(event)=>{
 
 
 document.getElementById('registrar').addEventListener('click', (event) => {
-if(document.getElementById('evento').value.trim() === ""){
+event.preventDefault();
+if(document.getElementById('evento').value === ""){
     alert('Ingrese el contenido del evento para poder registrarlo');
-    return;
 } else{
-    alert('El evento se ha registrado exitosamente.')
-    return;
+    alert('El evento se ha registrado exitosamente.');
+
+    let fechas = [];
+    const mes = document.getElementById('mes').value;
+    const dia = document.getElementById('dia').value;
+    const evento = document.getElementById('evento').value;
+
+    fechas.push(mes);
+    fechas.push(dia);
+    fechas.push(evento);
+
+    const resultado = document.getElementById('datos');
+    resultado.textContent = fechas;
+
+    console.log(fechas)
 }
 });
