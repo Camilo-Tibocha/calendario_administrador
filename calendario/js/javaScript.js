@@ -5,8 +5,6 @@ document.getElementById('mes').addEventListener('change',(event)=>{
     document.getElementById('dia').setAttribute('max', ul);
 });
 
-
-
 document.getElementById('registrar').addEventListener('click', (event) => {
 event.preventDefault();
 if(document.getElementById('evento').value === ""){
