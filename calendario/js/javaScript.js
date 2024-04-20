@@ -12,8 +12,6 @@ event.preventDefault();
 if(document.getElementById('evento').value === ""){
     alert('Ingrese el contenido del evento para poder registrarlo');
 } else{
-    alert('El evento se ha registrado exitosamente.');
-
     let fechas = [];
     const mes = document.getElementById('mes').value;
     const dia = document.getElementById('dia').value;
@@ -23,8 +21,16 @@ if(document.getElementById('evento').value === ""){
     fechas.push(dia);
     fechas.push(evento);
 
-    const resultado = document.getElementById('datos');
-    resultado.textContent = fechas;
+    const fila = tablaDatos.insertRow();
+    const celdaMes = fila.insertCell(0);
+    const celdaDia = fila.insertCell(1);
+    const celdaEvento = fila.insertCell(2);
+
+    celdaMes.textContent = mes;
+    celdaDia.textContent = dia;
+    celdaEvento.textContent = evento;
+
+    alert('El evento se ha registrado exitosamente.');
 
     console.log(fechas)
 }
