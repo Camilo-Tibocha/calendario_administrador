@@ -14,8 +14,9 @@ if(document.getElementById('evento').value === ""){
     const mes = document.getElementById('mes').value;
     const dia = document.getElementById('dia').value;
     const evento = document.getElementById('evento').value;
+    const mesTexto = document.getElementById('mes').options[document.getElementById('mes').selectedIndex].text;
 
-    fechas.push(mes);
+    fechas.push(mesTexto);
     fechas.push(dia);
     fechas.push(evento);
 
@@ -24,7 +25,7 @@ if(document.getElementById('evento').value === ""){
     const celdaDia = fila.insertCell(1);
     const celdaEvento = fila.insertCell(2);
 
-    celdaMes.textContent = mes;
+    celdaMes.textContent = mesTexto;
     celdaDia.textContent = dia;
     celdaEvento.textContent = evento;
 
