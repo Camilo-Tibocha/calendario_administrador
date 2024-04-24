@@ -15,7 +15,7 @@
 }
 
 input:required {
-  border: 1px solid red; /* Cambia el borde a rojo para resaltar los campos obligatorios */
+  border: 1px solid red; 
 }
 
 .buscarButton, .createButton {
@@ -117,7 +117,7 @@ input:required {
   background-color: #da190b;
 }
 
-/* Estilos específicos para los botones de editar y borrar */
+
 .editarButton {
   background-color: #FF9800;
 }
@@ -126,7 +126,7 @@ input:required {
   background-color: #F44336;
 }
 
-/* Cambio de color al pasar el ratón sobre los botones de editar y borrar */
+
 .editarButton:hover {
   background-color: #e68a00;
 }
@@ -135,7 +135,7 @@ input:required {
   background-color: #e63900;
 }
 
-/* Cambio de color al hacer clic en los botones de editar y borrar */
+
 .editarButton:active {
   background-color: #d16600;
 }
