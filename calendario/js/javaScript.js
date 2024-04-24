@@ -33,17 +33,32 @@ if(document.getElementById('evento').value === ""){
     celdaBoton.innerHTML = '<button class="modificar" id="modificar">Modificar</button>';
     celdaEliminar.innerHTML = '<button class="eliminar" id="eliminar">Eliminar</button>';;
 
-    document.getElementById('modificar').addEventListener('click', () => {
-        alert('hola');
-    })
-
-    document.getElementById('tablaDatos').addEventListener('click', (event) => {
-        if (event.target.matches('#eliminar')) {
-            let fila = event.target.parentNode.parentNode;
-            fila.remove();
-        }
-    });
-
     alert('El evento se ha registrado exitosamente.');
 }
+});
+
+document.getElementById('tablaDatos').addEventListener('click', (event) => {
+    if (event.target.matches('#modificar')) {
+      const row = event.target.parentNode.parentNode;
+      const mes = row.cells[0].textContent;
+      const dia = row.cells[1].textContent;
+      const evento = row.cells[2].textContent;
+  
+      const nuevoMes = document.getElementById('mes').options[document.getElementById('mes').selectedIndex].text;
+      const nuevoDia = document.getElementById('dia').value;
+      const nuevoEvento = document.getElementById('evento').value;
+  
+      row.cells[0].textContent = nuevoMes;
+      row.cells[1].textContent = nuevoDia;
+      row.cells[2].textContent = nuevoEvento;
+      alert('El registro se ha modificado exitosamente.');
+    }
+  });
+
+document.getElementById('tablaDatos').addEventListener('click', (event) => {
+    if (event.target.matches('#eliminar')) {
+        let fila = event.target.parentNode.parentNode;
+        fila.remove();
+        alert('El registro se ha eliminado exitosamente.');
+    }
 });
