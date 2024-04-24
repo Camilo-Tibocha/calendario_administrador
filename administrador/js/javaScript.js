@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const tablaEmpleados = document.getElementById("tablaEmpleados").getElementsByTagName('tbody')[0];
+    const tablaEmpleados = document.getElementById("tablaEmpleados").tBodies[0];
     const formulario = document.getElementById("formulario");
     const createButton = document.querySelector(".createButton");
     const guardarButton = document.querySelector(".guardarButton");
@@ -50,29 +50,28 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function agregarEmpleado(nombre, apellido, cargo, salario) {
         const fila = tablaEmpleados.insertRow();
-        const celdaNombre = fila.insertCell(0);
-        const celdaApellido = fila.insertCell(1);
-        const celdaCargo = fila.insertCell(2);
-        const celdaSalario = fila.insertCell(3);
-        const celdaEditar = fila.insertCell(4);
-        const celdaBorrar = fila.insertCell(5);
+        const celdas = [
+            fila.insertCell(0),
+            fila.insertCell(1),
+            fila.insertCell(2),
+            fila.insertCell(3),
+            fila.insertCell(4),
+            fila.insertCell(5)
+        ];
 
-        celdaNombre.textContent = nombre;
-        celdaApellido.textContent = apellido;
-        celdaCargo.textContent = cargo;
-        celdaSalario.textContent = salario;
-        celdaEditar.innerHTML = `<button class="editarButton">Editar</button>`;
-        celdaBorrar.innerHTML = `<button class="borrarButton">Borrar</button>`;
+        celdas[0].textContent = nombre;
+        celdas[1].textContent = apellido;
+        celdas[2].textContent = cargo;
+        celdas[3].textContent = salario;
+        celdas[4].innerHTML = `<button class="editarButton">Editar</button>`;
+        celdas[5].innerHTML = `<button class="borrarButton">Borrar</button>`;
 
-        const editarButton = celdaEditar.querySelector(".editarButton");
-        editarButton.addEventListener("click", function() {
-            
+        celdas[4].querySelector(".editarButton").addEventListener("click", function() {
             filaEditar = fila;
             mostrarFormularioEdicion();
         });
 
-        const borrarButton = celdaBorrar.querySelector(".borrarButton");
-        borrarButton.addEventListener("click", function() {
+        celdas[5].querySelector(".borrarButton").addEventListener("click", function() {
             fila.parentElement.removeChild(fila); 
         });
     }
@@ -82,15 +81,11 @@ document.addEventListener("DOMContentLoaded", function() {
         createButton.style.display = "none";
         limpiarErrores();
 
-        const nombre = filaEditar.cells[0].textContent;
-        const apellido = filaEditar.cells[1].textContent;
-        const cargo = filaEditar.cells[2].textContent;
-        const salario = filaEditar.cells[3].textContent;
-
-        document.getElementById("nombreNuevo").value = nombre;
-        document.getElementById("apellidoNuevo").value = apellido;
-        document.getElementById("cargoNuevo").value = cargo;
-        document.getElementById("salarioNuevo").value = salario;
+        const celdas = filaEditar.cells;
+        document.getElementById("nombreNuevo").value = celdas[0].textContent;
+        document.getElementById("apellidoNuevo").value = celdas[1].textContent;
+        document.getElementById("cargoNuevo").value = celdas[2].textContent;
+        document.getElementById("salarioNuevo").value = celdas[3].textContent;
 
         editando = true;
     }
@@ -155,7 +150,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
         if (!hayError) {
             if (editando && filaEditar !== null) {
-                
                 filaEditar.cells[0].textContent = nombre;
                 filaEditar.cells[1].textContent = apellido;
                 filaEditar.cells[2].textContent = cargo;
