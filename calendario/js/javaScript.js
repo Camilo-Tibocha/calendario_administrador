@@ -24,13 +24,26 @@ if(document.getElementById('evento').value === ""){
     const celdaMes = fila.insertCell(0);
     const celdaDia = fila.insertCell(1);
     const celdaEvento = fila.insertCell(2);
+    const celdaBoton = fila.insertCell(3);
+    const celdaEliminar = fila.insertCell(4);
 
     celdaMes.textContent = mesTexto;
     celdaDia.textContent = dia;
     celdaEvento.textContent = evento;
+    celdaBoton.innerHTML = '<button class="modificar" id="modificar">Modificar</button>';
+    celdaEliminar.innerHTML = '<button class="eliminar" id="eliminar">Eliminar</button>';;
+
+    document.getElementById('modificar').addEventListener('click', () => {
+        alert('hola');
+    })
+
+    document.getElementById('tablaDatos').addEventListener('click', (event) => {
+        if (event.target.matches('#eliminar')) {
+            let fila = event.target.parentNode.parentNode;
+            fila.remove();
+        }
+    });
 
     alert('El evento se ha registrado exitosamente.');
-
-    console.log(fechas)
 }
 });
