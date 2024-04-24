@@ -1,118 +1,145 @@
 .container {
-    display: flex;
-    align-items: center;
-    justify-content: center; 
-    margin-top: 20px;
-    text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  margin-top: 20px;
+  text-align: center;
 }
-
 
 .text {
-    margin-bottom: 10px;
-    padding: 10px;
-    border: 1px solid #ccc; 
-    width: 300px;
-    outline: none;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ccc; 
+  width: 300px;
+  outline: none;
 }
+
 input:required {
-    border: 1px solid red; /* Cambia el borde a rojo para resaltar los campos obligatorios */
+  border: 1px solid red; /* Cambia el borde a rojo para resaltar los campos obligatorios */
 }
 
 .buscarButton, .createButton {
-    padding: 10px 20px;
-    margin: 5px 10px; 
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+  padding: 10px 20px;
+  margin: 5px 10px; 
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
-
 
 .buscarButton:hover {
-    background-color: #0056b3;
+  background-color: #0056b3;
 }
 
-
 .createButton:hover {
-    background-color: #04AA6D;
+  background-color: #04AA6D;
 }
 
 .titulo {
-    background-color: #420000;
-    color: #ffffff;
-    text-align: center;
-    font-size: 30px;
-    width: 100%; 
-    padding: 10px 0; 
+  background-color: #420000;
+  color: #ffffff;
+  text-align: center;
+  font-size: 30px;
+  width: 100%; 
+  padding: 10px 0; 
 }
 
 .tablaEmpleados{
-    background-color: #720000;
-    color: #ffffff;
-    width: 100%;
-    border: 1px solid;
-    padding: 5px;
-    text-align: left;
-    
+  background-color: #720000;
+  color: #ffffff;
+  width: 100%;
+  border: 1px solid;
+  padding: 5px;
+  text-align: left;
 }
+
 .error {
-    color: red;
-    font-size: 0.8em;
-    margin-top: 0.2em;
-    display: none;
+  color: red;
+  font-size: 0.8em;
+  margin-top: 0.2em;
+  display: none;
 }
 
 #formulario {
-    display: none;
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f4f4f4;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  #formulario h2 {
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  #formulario input[type="text"],
-  #formulario input[type="number"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-  }
-  
-  #formulario .guardarButton,
-  #formulario .cancelarButton {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    margin-top: 10px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  #formulario .guardarButton {
-    background-color: #4caf50;
-    color: #fff;
-  }
-  
-  #formulario .guardarButton:hover {
-    background-color: #45a049;
-  }
-  
-  #formulario .cancelarButton {
-    background-color: #f44336;
-    color: #fff;
-  }
-  
-  #formulario .cancelarButton:hover {
-    background-color: #da190b;
-  }
+  display: none;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#formulario h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+#formulario input[type="text"],
+#formulario input[type="number"] {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+#formulario .guardarButton,
+#formulario .cancelarButton,
+.editarButton,
+.borrarButton {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#formulario .guardarButton {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+#formulario .guardarButton:hover {
+  background-color: #45a049;
+}
+
+#formulario .cancelarButton {
+  background-color: #f44336;
+  color: #fff;
+}
+
+#formulario .cancelarButton:hover {
+  background-color: #da190b;
+}
+
+/* Estilos específicos para los botones de editar y borrar */
+.editarButton {
+  background-color: #FF9800;
+}
+
+.borrarButton {
+  background-color: #F44336;
+}
+
+/* Cambio de color al pasar el ratón sobre los botones de editar y borrar */
+.editarButton:hover {
+  background-color: #e68a00;
+}
+
+.borrarButton:hover {
+  background-color: #e63900;
+}
+
+/* Cambio de color al hacer clic en los botones de editar y borrar */
+.editarButton:active {
+  background-color: #d16600;
+}
+
+.borrarButton:active {
+  background-color: #c62800;
+}

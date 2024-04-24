@@ -54,11 +54,49 @@ document.addEventListener("DOMContentLoaded", function() {
         const celdaApellido = fila.insertCell(1);
         const celdaCargo = fila.insertCell(2);
         const celdaSalario = fila.insertCell(3);
+        const celdaEditar = fila.insertCell(4);
+        const celdaBorrar = fila.insertCell(5);
 
         celdaNombre.textContent = nombre;
         celdaApellido.textContent = apellido;
         celdaCargo.textContent = cargo;
         celdaSalario.textContent = salario;
+        celdaEditar.innerHTML = `<button class="editarButton">Editar</button>`;
+        celdaBorrar.innerHTML = `<button class="borrarButton">Borrar</button>`;
+
+        const editarButton = celdaEditar.querySelector(".editarButton");
+        editarButton.addEventListener("click", function() {
+            mostrarFormularioEdicion(tablaEmpleados.rows.length - 1);
+        });
+
+        const borrarButton = celdaBorrar.querySelector(".borrarButton");
+        borrarButton.addEventListener("click", function() {
+            tablaEmpleados.deleteRow(tablaEmpleados.rows.length - 1);
+        });
+    }
+
+    function mostrarFormularioEdicion(indice) {
+        formulario.style.display = "block";
+        createButton.style.display = "none";
+        limpiarErrores();
+
+        const fila = tablaEmpleados.rows[indice];
+        const nombre = fila.cells[0].textContent;
+        const apellido = fila.cells[1].textContent;
+        const cargo = fila.cells[2].textContent;
+        const salario = fila.cells[3].textContent;
+
+        document.getElementById("nombreNuevo").value = nombre;
+        document.getElementById("apellidoNuevo").value = apellido;
+        document.getElementById("cargoNuevo").value = cargo;
+        document.getElementById("salarioNuevo").value = salario;
+
+        editando = true;
+        indiceEditar = indice;
+    }
+
+    function soloLetras(cadena) {
+        return /^[A-Za-z]+$/.test(cadena);
     }
 
     guardarButton.addEventListener("click", function(event) {
@@ -77,10 +115,18 @@ document.addEventListener("DOMContentLoaded", function() {
             errorNombre.textContent = "El nombre es obligatorio.";
             errorNombre.style.display = "block";
             hayError = true;
+        } else if (!soloLetras(nombre)) {
+            errorNombre.textContent = "El nombre solo puede contener letras.";
+            errorNombre.style.display = "block";
+            hayError = true;
         }
 
         if (apellido === '') {
             errorApellido.textContent = "El apellido es obligatorio.";
+            errorApellido.style.display = "block";
+            hayError = true;
+        } else if (!soloLetras(apellido)) {
+            errorApellido.textContent = "El apellido solo puede contener letras.";
             errorApellido.style.display = "block";
             hayError = true;
         }
@@ -88,6 +134,16 @@ document.addEventListener("DOMContentLoaded", function() {
         if (cargo === '') {
             errorCargo.textContent = "El cargo es obligatorio.";
             errorCargo.style.display = "block";
+            hayError = true;
+        } else if (!soloLetras(cargo)) {
+            errorCargo.textContent = "El cargo solo puede contener letras.";
+            errorCargo.style.display = "block";
+            hayError = true;
+        }
+
+        if (salario === '') {
+            errorSalario.textContent = "El salario es obligatorio.";
+            errorSalario.style.display = "block";
             hayError = true;
         }
 
@@ -125,4 +181,4 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-});
+})
