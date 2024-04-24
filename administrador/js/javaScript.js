@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const guardarButton = document.querySelector(".guardarButton");
     const cancelarButton = document.querySelector(".cancelarButton");
     let editando = false;
-    let filaEditar = null; // Nueva variable para almacenar la fila a editar
+    let filaEditar = null; 
 
     const errorNombre = document.getElementById("errorNombre");
     const errorApellido = document.getElementById("errorApellido");
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
         limpiarFormulario();
         limpiarErrores();
         editando = false;
-        filaEditar = null; // Reiniciamos la fila a editar
+        filaEditar = null; 
     });
 
     cancelarButton.addEventListener("click", function() {
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {
         limpiarFormulario();
         limpiarErrores();
         editando = false;
-        filaEditar = null; // Reiniciamos la fila a editar
+        filaEditar = null;
     });
 
     function limpiarFormulario() {
@@ -66,14 +66,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
         const editarButton = celdaEditar.querySelector(".editarButton");
         editarButton.addEventListener("click", function() {
-            // Al hacer clic en el botón de editar, almacenamos la fila correspondiente
+            
             filaEditar = fila;
             mostrarFormularioEdicion();
         });
 
         const borrarButton = celdaBorrar.querySelector(".borrarButton");
         borrarButton.addEventListener("click", function() {
-            fila.parentElement.removeChild(fila); // Eliminamos la fila
+            fila.parentElement.removeChild(fila); 
         });
     }
 
@@ -155,7 +155,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         if (!hayError) {
             if (editando && filaEditar !== null) {
-                // Editamos los valores directamente en la fila almacenada
+                
                 filaEditar.cells[0].textContent = nombre;
                 filaEditar.cells[1].textContent = apellido;
                 filaEditar.cells[2].textContent = cargo;
@@ -164,7 +164,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 createButton.style.display = "block";
                 limpiarFormulario();
                 editando = false;
-                filaEditar = null; // Reiniciamos la fila a editar
+                filaEditar = null; 
             } else {
                 agregarEmpleado(nombre, apellido, cargo, salario);
                 formulario.style.display = "none";
