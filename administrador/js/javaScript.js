@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const guardarButton = document.querySelector(".guardarButton");
     const cancelarButton = document.querySelector(".cancelarButton");
     let editando = false;
-    let indiceEditar = null;
+    let filaEditar = null; // Nueva variable para almacenar la fila a editar
 
     const errorNombre = document.getElementById("errorNombre");
     const errorApellido = document.getElementById("errorApellido");
@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
         limpiarFormulario();
         limpiarErrores();
         editando = false;
-        indiceEditar = null;
+        filaEditar = null; // Reiniciamos la fila a editar
     });
 
     cancelarButton.addEventListener("click", function() {
@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", function() {
         limpiarFormulario();
         limpiarErrores();
         editando = false;
-        indiceEditar = null;
+        filaEditar = null; // Reiniciamos la fila a editar
     });
 
     function limpiarFormulario() {
@@ -66,25 +66,26 @@ document.addEventListener("DOMContentLoaded", function() {
 
         const editarButton = celdaEditar.querySelector(".editarButton");
         editarButton.addEventListener("click", function() {
-            mostrarFormularioEdicion(tablaEmpleados.rows.length - 1);
+            // Al hacer clic en el botón de editar, almacenamos la fila correspondiente
+            filaEditar = fila;
+            mostrarFormularioEdicion();
         });
 
         const borrarButton = celdaBorrar.querySelector(".borrarButton");
         borrarButton.addEventListener("click", function() {
-            tablaEmpleados.deleteRow(tablaEmpleados.rows.length - 1);
+            fila.parentElement.removeChild(fila); // Eliminamos la fila
         });
     }
 
-    function mostrarFormularioEdicion(indice) {
+    function mostrarFormularioEdicion() {
         formulario.style.display = "block";
         createButton.style.display = "none";
         limpiarErrores();
 
-        const fila = tablaEmpleados.rows[indice];
-        const nombre = fila.cells[0].textContent;
-        const apellido = fila.cells[1].textContent;
-        const cargo = fila.cells[2].textContent;
-        const salario = fila.cells[3].textContent;
+        const nombre = filaEditar.cells[0].textContent;
+        const apellido = filaEditar.cells[1].textContent;
+        const cargo = filaEditar.cells[2].textContent;
+        const salario = filaEditar.cells[3].textContent;
 
         document.getElementById("nombreNuevo").value = nombre;
         document.getElementById("apellidoNuevo").value = apellido;
@@ -92,7 +93,6 @@ document.addEventListener("DOMContentLoaded", function() {
         document.getElementById("salarioNuevo").value = salario;
 
         editando = true;
-        indiceEditar = indice;
     }
 
     function soloLetras(cadena) {
@@ -154,8 +154,8 @@ document.addEventListener("DOMContentLoaded", function() {
         }
 
         if (!hayError) {
-            if (editando && indiceEditar !== null) {
-                const filaEditar = tablaEmpleados.rows[indiceEditar];
+            if (editando && filaEditar !== null) {
+                // Editamos los valores directamente en la fila almacenada
                 filaEditar.cells[0].textContent = nombre;
                 filaEditar.cells[1].textContent = apellido;
                 filaEditar.cells[2].textContent = cargo;
@@ -164,7 +164,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 createButton.style.display = "block";
                 limpiarFormulario();
                 editando = false;
-                indiceEditar = null;
+                filaEditar = null; // Reiniciamos la fila a editar
             } else {
                 agregarEmpleado(nombre, apellido, cargo, salario);
                 formulario.style.display = "none";
@@ -174,11 +174,4 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    tablaEmpleados.addEventListener("click", function(event) {
-        if (event.target && event.target.nodeName == "BUTTON" && event.target.textContent == "Editar") {
-            const indice = event.target.parentElement.parentElement.rowIndex;
-            mostrarFormularioEdicion(indice);
-        }
-    });
-
-})
+});
