@@ -18,7 +18,7 @@ input:required {
   border: 1px solid red; 
 }
 
-.buscarButton, .createButton {
+ .createButton {
   padding: 10px 20px;
   margin: 5px 10px; 
   background-color: #007bff;
@@ -28,9 +28,6 @@ input:required {
   cursor: pointer;
 }
 
-.buscarButton:hover {
-  background-color: #0056b3;
-}
 
 .createButton:hover {
   background-color: #04AA6D;
